@@ -17,7 +17,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case 'list':
       const allContacts = await contactActions.listContacts();
-      return console.log(allContacts);
+      return console.table(allContacts);
     case 'get':
       const getContact = await contactActions.getContactById(id);
       return console.log(getContact);
@@ -27,13 +27,12 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case 'remove':
       const deleteContact = await contactActions.removeContact(id);
       return console.log(deleteContact);
-
     default:
       console.warn('\x1B[31m Unknown action type!');
   }
 };
 
-// invokeAction(argv);
+invokeAction(argv);
 // invokeAction({ action: 'get', id: 'qdggE76Jtbfd9eWJHrssH' });
 // invokeAction({
 //   action: 'add',
@@ -41,4 +40,5 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //   email: 'my@mail.com',
 //   phone: '(123) 555-1234',
 // });
-invokeAction({ action: 'remove', id: '4jOT1Mm2LmQ2jDfHhx4i_' });
+// invokeAction({ action: 'remove', id: '4jOT1Mm2LmQ2jDfHhx4i_' });
+// invokeAction({ action: 'list' });
