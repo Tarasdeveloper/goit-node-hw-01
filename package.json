@@ -22,5 +22,8 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "commander": "^11.0.0",
+    "nanoid": "3.3.4"
+  }
 }
